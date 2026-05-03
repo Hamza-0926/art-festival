@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>Art Hub</title>
+</head>
+<body>
+
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title shimmer"><a href="index.html"></a>ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+        <nav class="topnav" id="navMenu">
+            <a class="active" href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a href="artists.html">Artists</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+
+<div class="parallax p1"></div>
+
+<div class="section">
+    <h2>Community Events</h2>
+    <p>Community events bring local artists and visitors together for small exhibitions and live demos.
+    Each event introduces new artwork and simple techniques anyone can try.
+    People of all ages are welcome, making it a relaxed space to meet creators, 
+    learn basic skills, and stay involved in the local art community.</p>
+</div>
+
+<div class="parallax p2"></div>
+
+<div class="section">
+    <h2>Workshops</h2>
+    <p>Our workshops give you simple, hands-on activities taught by friendly volunteers.
+    You learn basic drawing, painting, and craft skills at your own pace.
+    Sessions stay relaxed and beginner-friendly, making it easy to try new techniques,
+    meet other learners, and build confidence with your art.</p>
+</div>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+btn.onclick = function() {
+    if(menu.style.display === "flex") menu.style.display = "none";
+    else menu.style.display = "flex";
+}
+
+const toggleBtn = document.getElementById('accessibilityToggle');
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+</script>
+    <div class="footerbb">
+        <p>© Hamza Farooq. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

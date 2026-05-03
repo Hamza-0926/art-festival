@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>FAQs | Art Hub</title>
+
+<style>
+.faq-container {
+    width: 85%;
+    max-width: 900px;
+    margin: 80px auto;
+    background: rgba(0,0,0,0.65);
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.faq-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Bungee', cursive;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.faq-item h3 {
+    margin-bottom: 6px;
+    color: #ffb3ff;
+    font-size: 18px;
+}
+
+.faq-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.faq-item a {
+    color: #9aa6ff;
+    text-decoration: underline;
+}
+    body {
+        background-image: url("images/faqs.avif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+
+<body>
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title">ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+        <nav class="topnav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a href="artists.html">Artists</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a class="active" href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+
+<div class="faq-container">
+    <h1>Festival FAQs</h1>
+
+    <div class="faq-item">
+        <h3>What is the Art Hub community festival?</h3>
+        <p>
+            Art Hub hosts local art festivals that bring together artists, creators, and visitors to celebrate creativity, culture, and community in a welcoming space.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Where can I see upcoming events?</h3>
+        <p>
+            All upcoming festivals, workshops, and exhibitions are listed on our 
+            <a href="events.html">Events Page</a>.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Who can attend the festival?</h3>
+        <p>
+            Everyone is welcome. Our events are designed for all ages, skill levels, and backgrounds.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Can I take part as an artist?</h3>
+        <p>
+            Yes. Local artists can apply to showcase work, host workshops, or perform. Check the 
+            <a href="events.html">Events Page</a> for application details.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I get in touch for more information?</h3>
+        <p>
+            You can reach us through the <a href="contact.html">Contact Page</a> for any questions or support.
+        </p>
+    </div>
+</div>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+
+btn.onclick = function () {
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+};
+const toggleBtn = document.getElementById('accessibilityToggle');
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+</script>
+    <div class="footerbb">
+        <p>© Hamza Farooq. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

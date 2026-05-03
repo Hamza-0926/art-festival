@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>Events | Art Hub</title>
+<style>
+    body {
+        background-image: url("images/sunny.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title">ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+        <nav class="topnav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a class="active" href="events.html">Events</a>
+            <a href="artists.html">Artists</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+
+<div class="section">
+    <h2>Community Art Festival</h2>
+    <p>
+        A colourful, family friendly art festival bringing local artists,
+        food stalls, music, and hands on creativity together.
+        Everyone is welcome.
+    </p>
+</div>
+
+<div class="gallery-wrap">
+    <h2 class="gallery-title">Festival Highlights</h2>
+    <div class="gallery-grid">
+        <img src="images/live-painting.avif" alt="Live painting">
+        <img src="images/comm-mural.webp" alt="Community mural">
+        <img src="images/kids-craft.avif" alt="Kids art activities">
+        <img src="images/local-artist.jpeg" alt="Local artist stalls">
+        <img src="images/workshop.webp" alt="Art workshop">
+        <img src="images/festival.jpeg" alt="Festival crowd">
+    </div>
+</div>
+<div class="section">
+    <h2>Festival Dates - Locations - Artists</h2>
+
+    <p>
+        <strong>January 2026</strong><br>
+        Date: Saturday 10th and Saturday 24th<br>
+        Location: Turf Moor<br>
+    </p>
+
+    <p>
+        <strong>February 2026</strong><br>
+        Date: Saturday 7th and Saturday 21st<br>
+        Location: Towneley Park<br>
+    </p>
+
+    <p>
+        <strong>March 2026</strong><br>
+        Date: Saturday 7th and Saturday 21st<br>
+        Location: Pendle Village<br>
+    </p>
+</div>
+<div class="gallery-wrap">
+    <h2 class="gallery-title">Food and Drink</h2>
+    <div class="gallery-grid">
+        <img src="images/piza.avif" alt="Pizza stall">
+        <img src="images/berger.jpg" alt="Burger stall">
+        <img src="images/vega.jpg" alt="Vegan food">
+        <img src="images/desertt.jpg" alt="Cakes and desserts">
+    </div>
+</div>
+
+<div class="section">
+    <h2>Accessibility</h2>
+    <p>
+        Step free access across the venue<br>
+        Seating areas available throughout<br>
+        Accessible toilets on site<br>
+        Quiet areas for sensory breaks<br>
+        Staff on hand to help at all times
+    </p>
+</div>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+btn.onclick = function() {
+    if(menu.style.display === "flex") menu.style.display = "none";
+    else menu.style.display = "flex";
+}
+
+const toggleBtn = document.getElementById('accessibilityToggle');
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+</script>
+    <div class="footerbb">
+        <p>© Hamza Farooq. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

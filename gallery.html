@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>Gallery | Art Hub</title>
+<style>
+    body {
+        background-image: url("images/greyyy.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title">ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+        <nav class="topnav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a class="active" href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a href="artists.html">Artists</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+<main class="gallery-wrap">
+    <h1 class="gallery-title">Community Gallery</h1>
+
+    <div class="gallery-grid">
+        <img src="images/cat.jpg" alt="Abstract Art Of Red, White and different shades of blue">
+        <img src="images/yellow-swirls.webp" alt="Dark Mountain and different shades of blue swirls as sky and key sun">
+        <img src="images/splashers.jpg" alt="Abstract Art of multiple light oil based colours">
+        <img src="images/france-tower.jpg" alt="Eiffel tower in background and multiple trees on the left side of image">
+        <img src="images/tree-purple.jpg" alt="Single black tree on hill with purplish sunset">
+        <img src="images/sunny.jpg" alt="Visible Ocean with a deep orange sunset and light blue">
+    </div>
+</main>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+btn.onclick = function() {
+    if(menu.style.display === "flex") menu.style.display = "none";
+    else menu.style.display = "flex";
+}
+const toggleBtn = document.getElementById('accessibilityToggle');
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+</script>
+    <div class="footerbb">
+        <p>© Hamza Farooq. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

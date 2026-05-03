@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>Artists | Art Hub</title>
+
+<style>
+    body {
+        background-image: url("images/greyyy.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .artist-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px;
+    }
+
+    .artist-card {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .artist-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .artist-card h2 {
+        margin: 10px 0;
+    }
+</style>
+</head>
+
+<body>
+
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title">ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+
+        <nav class="topnav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a class="active" href="artists.html">Artists</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <h1 style="text-align:center; padding:20px;">Featured Artists</h1>
+
+    <div class="artist-grid">
+
+        <div class="artist-card">
+            <img src="images/artist4321.jpg" alt="Artwork by Ava Collins">
+            <h2>Ava Collins</h2>
+            <p>Ava is a contemporary abstract artist known for bold colour blends and emotional expression through paint.</p>
+        </div>
+
+        <div class="artist-card">
+            <img src="images/artist3612.webp" alt="Artwork by Daniel Hughes">
+            <h2>Daniel Hughes</h2>
+            <p>Daniel specialises in modern landscape art inspired by urban life and natural contrast.</p>
+        </div>
+
+        <div class="artist-card">
+            <img src="images/artist762.avif" alt="Artwork by Mia Patel">
+            <h2>Mia Patel</h2>
+            <p>Mia creates digital art pieces focusing on futuristic themes and neon aesthetics.</p>
+        </div>
+
+        <div class="artist-card">
+            <img src="images/artist2.webp" alt="Artwork by Lucas Brown">
+            <h2>Lucas Brown</h2>
+            <p>Lucas is a mixed media artist combining photography and paint to create layered visual stories.</p>
+        </div>
+
+        <div class="artist-card">
+            <img src="images/artist213.png" alt="Artwork by Sophie Green">
+            <h2>Sophie Green</h2>
+            <p>Sophie focuses on nature-inspired artwork using soft tones and environmental themes.</p>
+        </div>
+        <div class="artist-card">
+            <img src="images/artist321.jpg" alt="Artwork by Ethan Walker">
+            <h2>Ethan Walker</h2>
+            <p>Ethan is a contemporary street artist known for bold graffiti inspired work and urban culture themes.</p>
+        </div>
+    </div>
+</main>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+btn.onclick = function() {
+    if(menu.style.display === "flex") menu.style.display = "none";
+    else menu.style.display = "flex";
+}
+
+const toggleBtn = document.getElementById('accessibilityToggle');
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+</script>
+
+<div class="footerbb">
+    <p>© Hamza Farooq. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

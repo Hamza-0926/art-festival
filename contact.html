@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>Contact | Art Hub</title>
+<style>
+    body {
+        background-image: url("images/contact-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 140px auto;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 40px;
+        border-radius: 12px;
+    }
+
+    .form-container h2 {
+        text-align: center;
+        font-family: "Bungee";
+        margin-bottom: 25px;
+        color: #00ffa2;
+    }
+
+    label {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: #00ffa2;
+        color: black;
+    }
+
+    button:hover {
+        background-color: #00d48a;
+    }
+</style>
+</head>
+<body>
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title">ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+        <nav class="topnav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a href="artists.html">Artists</a>
+            <a href="about-us.html">About Us</a>
+            <a class="active" href="contact.html">Contact</a>
+            <a href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+
+<div class="form-container">
+    <h2>Contact Us</h2>
+    <label>Select type</label>
+    <select id="formSelect" onchange="switchForm()">
+        <option value="">Choose one</option>
+        <option value="general">General enquiry</option>
+        <option value="artist">Submit art</option>
+    </select>
+
+    <form id="generalForm" action="https://formspree.io/f/mdkykqny" method="POST" style="display:none">
+        <label>Your name</label>
+        <input type="text" name="name" required>
+
+        <label>Your email</label>
+        <input type="email" name="email" required>
+
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+
+    <form id="artistForm" action="https://getform.io/f/aolzppmb" method="POST" enctype="multipart/form-data" style="display:none">
+        <label>Artist name</label>
+        <input type="text" name="artist_name" required>
+
+        <label>Email</label>
+        <input type="email" name="artist_email" required>
+
+        <label>Art title</label>
+        <input type="text" name="art_title" required>
+
+        <label>Description</label>
+        <textarea name="description" rows="5" required></textarea>
+
+        <label>Upload artwork</label>
+        <input type="file" name="file">
+
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script>
+function switchForm() {
+    const choice = document.getElementById("formSelect").value;
+    document.getElementById("generalForm").style.display = "none";
+    document.getElementById("artistForm").style.display = "none";
+
+    if (choice === "general") {
+        document.getElementById("generalForm").style.display = "block";
+    }
+    if (choice === "artist") {
+        document.getElementById("artistForm").style.display = "block";
+    }
+}
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+btn.onclick = function() {
+    if(menu.style.display === "flex") menu.style.display = "none";
+    else menu.style.display = "flex";
+}
+const toggleBtn = document.getElementById('accessibilityToggle');
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+</script>
+    <div class="footerbb">
+        <p>© Hamza Farooq. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

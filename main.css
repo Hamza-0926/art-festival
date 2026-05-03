@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("images/purplebg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(255, 255, 255);
+}
+.header-wrap { position: relative; }
+.nav-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-family: 'Bungee', cursive;
+    font-size: 28px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.topnav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-weight: bold;
+    font-family: 'Bungee', cursive;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 2.5rem;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.topnav a:hover { 
+    background-color: #fff;
+    color: black;
+ }
+.topnav a.active {
+    background-color: rgba(0,0,0,0.6);
+    color: white; 
+    border-radius: 5rem; 
+    font-family: 'Bungee', cursive;
+    font-weight: bold;
+}
+
+
+.signup-btn {
+    background: rgba(4,2,13,0.6);
+    color: white;
+    padding: 14px 18px;
+    border-radius: 2.5rem;
+    font-weight: bold;
+    font-family: 'Bungee', cursive;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.parallax { height: 500px; background-position: center; background-repeat: no-repeat; background-size: cover; }
+@media(min-width:768px){ .parallax { background-attachment: fixed; } }
+.p1 { background-image: url("images/mural1.webp"); }
+.p2 { background-image: url("images/mural2.jpg"); }
+
+.section {
+    padding: 50px;
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+    font-family: 'Bungee', cursive;
+}
+
+.mobile-btn {
+    display: none;
+    background: rgba(4,2,13,0.8);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 2rem;
+    font-family: 'Bungee', cursive;
+    font-size: 16px;
+}
+
+@media(max-width:700px){
+    .mobile-btn { display: block; }
+
+    .topnav {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        width: 90%;
+        max-height: 70vh;
+        overflow-y: auto;
+        margin: 10px auto 0 auto;
+        padding: 20px;
+        border-radius: 1rem;
+        text-align: center;
+        gap: 0;
+    }
+
+    .topnav a { padding: 12px; font-size: 18px; }
+
+    .signup-btn { margin-top: 10px; }
+}
+
+:root{
+    --base-color: #6b21a8;
+    --shimmer-color: #ff5ac4;
+    --shimmer-width: 25%;
+    --duration: 2.2s;
+}
+
+.site-title.shimmer {
+    font-size: clamp(24px, 6vw, 50px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    background: linear-gradient(
+        90deg,
+        var(--base-color) 0%,
+        var(--shimmer-color) calc(50% + var(--shimmer-width) / 2),
+        var(--base-color) 100%
+    );
+    
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer var(--duration) linear infinite;
+
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+@keyframes shimmer {
+    0%   { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+    .site-title.shimmer {
+        color: var(--base-color);
+        background: none;
+        -webkit-text-fill-color: initial;
+        text-shadow:
+            0 0 0 rgba(0,0,0,0),
+            0 0 20px rgba(255,90,180,0.06);
+    }
+}
+.gallery-wrap {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.gallery-title {
+    font-family: 'Bungee', cursive;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 220px;
+    }
+}
+.about-section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.6);
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-family: 'Bungee', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff79c6;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+.about-section h3 {
+    font-family: 'Bungee', cursive;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #a2b4ff;
+}
+
+.accessibility-mode {
+    background-color: #000 !important;
+    color: #fff !important;
+    font-size: 35px !important;
+    line-height: 1.6 !important;
+}
+
+.accessibility-mode a {
+    color: #0ff !important;
+    text-decoration: underline !important;
+}
+
+.accessibility-mode *:focus {
+    outline: 5px solid yellow !important;
+}
+.topnav {
+    gap: 6px;
+    font-size: 16px;
+}
+
+.access-btn {
+    background: rgba(4,2,13,0);
+    color: rgb(255, 255, 255);
+    padding: 10px 14px;
+    border-radius: 2rem;
+    font-family: 'Bungee', cursive;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.access-btn:hover {
+    background: white;
+    color: black;
+}
+.footerbb {
+    text-align: center;
+    color: white;
+    margin: 50px 0 20px 0;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<title>About Us | Art Hub</title>
+<style>
+    body {
+        background-image: url("images/purple-swirls.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+
+<header class="header-wrap">
+    <div class="nav-container">
+        <div class="site-title">ART HUB</div>
+        <button id="mobileToggle" class="mobile-btn">Menu</button>
+        <nav class="topnav" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="events.html">Events</a>
+            <a href="artists.html">Artists</a>
+            <a class="active" href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="FAQS.html">FAQS</a>
+            <button id="accessibilityToggle" class="access-btn">Accessibility Mode</button>
+        </nav>
+    </div>
+</header>
+
+<div class="section about-section">
+    <h2>About Us | Art Hub</h2>
+    <p>Art Hub is a vibrant community initiative dedicated to celebrating creativity and local talent. Our festival brings together artists, workshops, and interactive exhibits for everyone to enjoy. We aim to inspire, educate, and connect art lovers across Burnley and beyond. Join us to explore, create, and experience the power of art.</p>
+
+    <div class="mission">
+        <h3>Our Mission</h3>
+        <p>To provide a platform for artists of all ages, nurture creativity, and foster community engagement through immersive art experiences.</p>
+    </div>
+
+    <div class="team">
+        <h3>Meet the Team</h3>
+        <p>Our passionate volunteers, local artists, and event organizers work together to make every festival unique and memorable.</p>
+    </div>
+</div>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const menu = document.getElementById('navMenu');
+btn.onclick = function() {
+    if(menu.style.display === "flex") menu.style.display = "none";
+    else menu.style.display = "flex";
+}
+const toggleBtn = document.getElementById('accessibilityToggle');
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('accessibility-mode');
+    if(document.body.classList.contains('accessibility-mode')){
+        localStorage.setItem('accessibility','on');
+    } else {
+        localStorage.setItem('accessibility','off');
+    }
+}
+if(localStorage.getItem('accessibility') === 'on'){
+    document.body.classList.add('accessibility-mode');
+}
+</script>
+    <div class="footerbb">
+        <p>© Hamza Farooq. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
